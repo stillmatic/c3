@@ -483,15 +483,15 @@
                 };
             } else {
                 margin = {
-                    top: 4 + getCurrentPaddingTop(), // for top tick text
+                    top: 0 + getCurrentPaddingTop() + subchartHeight,
                     right: hasArc ? 0 : getCurrentPaddingRight(),
-                    bottom: xAxisHeight + subchartHeight + legendHeightForBottom + getCurrentPaddingBottom(),
+                    bottom: xAxisHeight + legendHeightForBottom + getCurrentPaddingBottom(),
                     left: hasArc ? 0 : getCurrentPaddingLeft()
                 };
-                margin2 = {
-                    top: currentHeight - subchartHeight - legendHeightForBottom,
+                margin2 = { //subchart!
+                    top: 0,
                     right: NaN,
-                    bottom: xAxisHeight + legendHeightForBottom,
+                    bottom: xAxisHeight + legendHeightForBottom + getCurrentHeight() - subchartHeight + 15,
                     left: margin.left
                 };
             }
@@ -3929,6 +3929,7 @@
                     drawAreaOnSub = generateDrawArea(areaIndices, true);
                     drawBarOnSub = generateDrawBar(barIndices, true);
                     drawLineOnSub = generateDrawLine(lineIndices, true);
+
                     // bars
                     contextBar = context.selectAll('.' + CLASS.bars).selectAll('.' + CLASS.bar)
                         .data(barData);
