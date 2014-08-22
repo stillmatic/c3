@@ -182,8 +182,6 @@
         // Set initialized scales to brush and zoom
         if ($$.brush) { $$.brush.scale($$.subX); }
         if (config.zoom_enabled) { $$.zoom.scale($$.x); }
-
-<<<<<<< HEAD
             // for main, context
             if (__axis_rotated) {
                 margin = {
@@ -223,9 +221,8 @@
                 bottom: 0,
                 left: isLegendRight ? currentWidth - legendWidth : isLegendInset ? insetLegendPosition.left : 0
             };
-=======
+
         /*-- Basic Elements --*/
->>>>>>> upstream/master
 
         // Define svgs
         $$.svg = $$.selectChart.append("svg")
@@ -4567,7 +4564,6 @@
                     // line/area selection not supported yet
                     return;
                 }
-<<<<<<< HEAD
                 // update subchart elements if needed
                 if (withSubchart) {
 
@@ -4630,13 +4626,11 @@
                     contextArea.exit().transition().duration(durationForExit)
                         .style('opacity', 0)
                         .remove();
-=======
                 if (isWithin ^ isIncluded) {
                     shape.classed(CLASS.INCLUDED, !isIncluded);
                     // TODO: included/unincluded callback here
                     shape.classed(CLASS.SELECTED, !isSelected);
                     toggle.call($$, !isSelected, shape, d, i);
->>>>>>> upstream/master
                 }
             });
     };
